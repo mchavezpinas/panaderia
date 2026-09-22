@@ -44,6 +44,10 @@
             <span class="material-icons">point_of_sale</span>
             Lista de Ventas de Abarrotes
         </a>
+        <a class="opcion" href="https://panificadoradelnortech.com/ventas_importacion/">
+            <span class="material-icons">upload_file</span>
+            Carga Masiva de Ventas
+        </a>
         <!-- <a class="opcion" href="">
             <span class="material-icons">receipt_long</span>
             Generacion de Facturas/Recibos

@@ -498,4 +498,33 @@ switch ($path) {
             }
         }
         break;
+    case '/carga_masiva_ventas':
+
+        if (isset($_SESSION['user_id'])) {
+
+            require_once '../app/views/cargaMasivaVentasView.php';
+        } else {
+
+            header("Location: /panaderia/public/login");
+        }
+
+        break;
+    case '/importar_ventas_excel':
+
+        if (isset($_SESSION['user_id'])) {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                require_once '../app/services/ImportadorVentas.php';
+
+                $importador = new ImportadorVentas();
+
+                $importador->importar(
+                    $_FILES['archivo_excel']['tmp_name']
+                );
+
+                header("Location: /panaderia/public/registro_ventas");
+                exit();
+            }
+        }
+
+        break;
 }
